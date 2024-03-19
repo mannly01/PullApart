@@ -1,5 +1,6 @@
 ﻿using CMS.UI;
 using MelonLoader;
+using System.IO;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -23,12 +24,12 @@ namespace PullApart
     /// <summary>
     /// Create a "PullApart.cfg" file in the Mods folder.
     /// </summary>
-    public class ConfigFile
+    public class PullApartConfigFile
     {
         /// <summary>
         /// Settings Category
         /// </summary>
-        private const string SettingsCatName = "Settings";
+        private const string SettingsCatName = "PullApartSettings";
         private readonly MelonPreferences_Category _settings;
         /// <summary>
         /// User setting for the key to pull apart all groups in the player inventory.
@@ -36,12 +37,16 @@ namespace PullApart
         public KeyCode PullApartGroups => _pullApartGroups.Value;
         private readonly MelonPreferences_Entry<KeyCode> _pullApartGroups;
 
-        public ConfigFile()
+        public PullApartConfigFile()
         {
             _settings = MelonPreferences.CreateCategory(SettingsCatName);
             _settings.SetFilePath("Mods/PullApart.cfg");
             _pullApartGroups = _settings.CreateEntry(nameof(PullApartGroups), KeyCode.F4,
                 description: "Press this Key to pull apart all the groups in your inventory.");
+            if (!File.Exists($"{Directory.GetCurrentDirectory()}\\Mods\\PullApart.cfg"))
+            {
+                _settings.SaveToFile();
+            }
         }
     }
 
@@ -50,13 +55,13 @@ namespace PullApart
         /// <summary>
         /// Reference to Settings file.
         /// </summary>
-        private ConfigFile _configFile;
+        private PullApartConfigFile _configFile;
 
         public override void OnInitializeMelon()
         {
             // Tell the user that we're loading the Settings.
             MelonLogger.Msg("Loading Settings...");
-            _configFile = new ConfigFile();
+            _configFile = new PullApartConfigFile();
         }
 
         public override void OnUpdate()
