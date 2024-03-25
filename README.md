@@ -10,8 +10,9 @@ Mod to automatically pull apart all groups in the player inventory.
 ## UPDATE 1.0.1
 * Fixed a bug: All parts removed from an engine group were unable to be used.
 * Added a setting to fix any parts that were broken from the above bug.
-* ** THE SETTING NEEDS TO BE SET TO TRUE AND IT WILL RESET TO FALSE ONCE COMPLETE **
-* ** A PullApart.cfg WITH THIS SETTING = TRUE IS INCLUDED IN THE RELEASE.ZIP **
+* ** THE SETTING NEEDS TO BE SET TO TRUE AND IT WILL RESET TO FALSE ONCE COMPLETE. **
+* ** ONCE THE SETTING IS TRUE, JUST PRESS THE PullApartGroups (F4) KEY TO FIX PARTS. **
+* ** A PullApart.cfg WITH THIS SETTING = TRUE IS INCLUDED IN THE .ZIP FILE. **
 
 ## DEFAULT KEYS
 * F4: Pull apart all groups in the user's inventory.
