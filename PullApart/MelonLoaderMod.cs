@@ -18,7 +18,7 @@ namespace PullApart
         public const string Description = "Mod to automatically pull apart all groups in the player inventory.";
         public const string Author = "mannly82";
         public const string Company = "The Mann Design";
-        public const string Version = "1.0.1";
+        public const string Version = "1.0.2";
         public const string DownloadLink = null;
         public const string MelonGameCompany = "Red Dot Games";
         public const string MelonGameName = "Car Mechanic Simulator 2021";
@@ -89,6 +89,12 @@ namespace PullApart
         {
             // Save a reference to the current scene.
             _currentScene = sceneName.ToLower();
+            if (_currentScene.Equals("christmas") ||
+                _currentScene.Equals("easter") ||
+                _currentScene.Equals("halloween"))
+            {
+                _currentScene = "garage";
+            }
         }
 
         public override void OnUpdate()

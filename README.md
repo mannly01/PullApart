@@ -1,4 +1,4 @@
-# PULL APART - 1.0.1
+# PULL APART - 1.0.2
 Mod to automatically pull apart all groups in the player inventory.
 
 ## REQUIREMENTS
@@ -7,12 +7,8 @@ Mod to automatically pull apart all groups in the player inventory.
 ## FEATURES
 * This mod allows the user to pull apart all the groups (engines, shocks, wheels) in their inventory with a single key.
 
-## UPDATE 1.0.1
-* Fixed a bug: All parts removed from an engine group were unable to be used.
-* Added a setting to fix any parts that were broken from the above bug.
-* ** THE SETTING NEEDS TO BE SET TO TRUE AND IT WILL RESET TO FALSE ONCE COMPLETE. **
-* ** ONCE THE SETTING IS TRUE, JUST PRESS THE PullApartGroups (F4) KEY TO FIX PARTS. **
-* ** A PullApart.cfg WITH THIS SETTING = TRUE IS INCLUDED IN THE .ZIP FILE. **
+## UPDATE 1.0.2
+* Fixed a bug: Holiday names were renaming the Garage and the mod no longer functioned.
 
 ## DEFAULT KEYS
 * F4: Pull apart all groups in the user's inventory.
